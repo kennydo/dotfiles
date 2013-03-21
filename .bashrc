@@ -26,7 +26,7 @@ hname_colors=(
 )
 
 hname=`hostname -s`
-middle_index=$((`echo -n $hname | wc --chars` / 2))
+middle_index=$((`echo -n $hname | wc -m` / 2))
 hname_one=${hname:0:$middle_index}
 hname_two=${hname:$middle_index}
 hname_one_color=${hname_colors[$((`python -c "print sum([ord(x) for x in list(\"$hname_one\")])"` % ${#hname_colors[@]}))]}
