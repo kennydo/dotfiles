@@ -44,12 +44,8 @@ export EDITOR="vim"
 export VISUAL="vim"
 
 # User specific aliases and functions
-if [ -f /usr/bin/virtualenvwrapper.sh ]; then
-    source /usr/bin/virtualenvwrapper.sh
-fi
-export WORKON_HOME=$HOME/.virtualenvs
-
 alias p='ps aux|grep ^`whoami`'
+alias ls='ls --color=auto'
 
 unset command_not_found_handle
 
@@ -59,3 +55,8 @@ unset command_not_found_handle
 # Only export screen if we're in tmux.
 [ -n "$TMUX" ] && export TERM=screen-256color
 export TERM=xterm-256color
+
+if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+    source /usr/bin/virtualenvwrapper.sh
+fi
+export WORKON_HOME=$HOME/.virtualenvs
