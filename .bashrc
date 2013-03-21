@@ -45,7 +45,11 @@ export VISUAL="vim"
 
 # User specific aliases and functions
 alias p='ps aux|grep ^`whoami`'
-alias ls='ls --color=auto'
+if [ `uname` == 'FreeBSD' ]; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+fi
 
 unset command_not_found_handle
 
