@@ -25,7 +25,7 @@ hname_colors=(
     "0;37" # white
 )
 
-hname=`hostname`
+hname=`hostname -s`
 middle_index=$((`echo -n $hname | wc --chars` / 2))
 hname_one=${hname:0:$middle_index}
 hname_two=${hname:$middle_index}
