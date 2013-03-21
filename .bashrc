@@ -132,7 +132,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 #
 ###############################################################################
 
-if [ "`hostname -f`" == "*.rescomp.berkeley.edu"  -a "`hostname -f`" == "*.housing.berkeley.edu" ]; then
+if [[ "`hostname -f`" == *.rescomp.berkeley.edu  -a "`hostname -f`" == *.housing.berkeley.edu ]]; then
     # Paths
     export SVNCODE=https://svn.rescomp.berkeley.edu/code
     export SVNTMPL=https://svn.rescomp.berkeley.edu/marketing
