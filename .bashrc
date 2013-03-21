@@ -92,7 +92,7 @@ prompt_character="\$"
 
 # Git niceness to put current git branch into PS1
 function parse_git_branch {
-    [[ -e `which git` && "/" != `git rev-parse --show-toplevel 2>/dev/null` ]] && git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+    [[ -e `which git 2> /dev/null` && "/" != `git rev-parse --show-toplevel 2>/dev/null` ]] && git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
 PS1="\n${prompt_time} ${prompt_path}\n"'$(parse_git_branch)'"${prompt_user}${prompt_host}${prompt_character} "
