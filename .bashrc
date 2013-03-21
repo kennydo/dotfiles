@@ -50,6 +50,8 @@ if [ `uname` == 'FreeBSD' ]; then
 else
     alias ls='ls --color=auto'
 fi
+alias grep='grep --color=auto'
+alias mutt='mutt -y'
 
 unset command_not_found_handle
 
