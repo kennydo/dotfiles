@@ -1,5 +1,31 @@
 # .bashrc
 
+case $OSTYPE in
+    solaris2.10)  DOMAINNAME=domainname ;;
+    linux-gnu)  DOMAINNAME=dnsdomainname ;;
+esac
+
+DOMAIN=$($DOMAINNAME)
+case $DOMAIN in
+ocf.berkeley.edu)
+    MAIL=/var/mail/${LOGNAME:?}
+    if [ -r /opt/ocf/share/environment/.bashrc ]; then
+        source /opt/ocf/share/environment/.bash_profile
+    fi
+    if [ `/usr/bin/whoami` != "root" ]; then
+        if [ -r /opt/ocf/share/environment/.bashrc ]; then
+            source /opt/ocf/share/environment/.bashrc
+        fi
+    fi
+    ;;
+CS.Berkeley.EDU | EECS.Berkeley.EDU)
+    [[ -z ${MASTER} ]] && export MASTER=${LOGNAME%-*}
+    [[ -z ${MASTERDIR} ]] && export MASTERDIR=$(eval echo ~${MASTER})
+    [[ -e ${MASTERDIR}/adm/class.bash_profile ]] && . ${MASTERDIR}/adm/class.bash_profile
+    ;;
+esac
+
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
