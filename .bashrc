@@ -1,7 +1,7 @@
 # .bashrc
 
 case $OSTYPE in
-    solaris2.10)  DOMAINNAME=domainname ;;
+    solaris*)  DOMAINNAME=domainname ;;
     linux-gnu)  DOMAINNAME=dnsdomainname ;;
 esac
 DOMAIN=$($DOMAINNAME)
@@ -58,7 +58,10 @@ hname_colors=(
     "0;37" # white
 )
 
-hname=`hostname -s`
+case $OSTYPE in
+    solaris*)   hname=`hostname` ;;
+    *)          hname=`hostname -s` ;;
+esac
 middle_index=$((`echo -n $hname | wc -m` / 2))
 hname_one=${hname:0:$middle_index}
 hname_two=${hname:$middle_index}
@@ -99,11 +102,13 @@ export TERM=xterm-256color
 #
 ###############################################################################
 alias p='ps aux|grep ^`whoami`'
-if [ `uname` == 'FreeBSD' ]; then
-    alias ls='ls -G'
-else
-    alias ls='ls --color=auto'
-fi
+case $OSTYPE in
+    solaris*)   alias ls='ls -G' ;;
+    freebsd*)   alias ls='ls -G' ;;
+    linux-gnu)  alias ls='ls --color=auto' ;;
+    *)          alias ls='ls';;
+esac
+
 alias grep='grep --color=auto'
 alias mutt='mutt -y'
 
@@ -114,7 +119,7 @@ alias mutt='mutt -y'
 ###############################################################################
 
 # for python virtual environment
-if [ -f /usr/bin/virtualenvwrapper.sh ]; then
+if [ -r /usr/bin/virtualenvwrapper.sh ]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
 export WORKON_HOME=$HOME/.virtualenvs
