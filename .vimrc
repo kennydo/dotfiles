@@ -31,10 +31,6 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" Fix backspaces
-set t_kb=^?
-set t_kD=^[[3~
-
 set visualbell
 
 " -------------------------------------------------------------------------------
