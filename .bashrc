@@ -108,6 +108,7 @@ case $OSTYPE in
     linux-gnu)  alias ls='ls --color=auto' ;;
     *)          alias ls='ls';;
 esac
+alias sl='ls';
 
 alias grep='grep --color=auto'
 alias mutt='mutt -y'
@@ -123,3 +124,22 @@ if [ -r /usr/bin/virtualenvwrapper.sh ]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
 export WORKON_HOME=$HOME/.virtualenvs
+
+
+###############################################################################
+#
+# ResComp-specific aliases
+#
+###############################################################################
+
+if [ "`hostname -f`" == "*.rescomp.berkeley.edu"  -a "`hostname -f`" == "*.housing.berkeley.edu" ]; then
+    # Paths
+    export SVNCODE=https://svn.rescomp.berkeley.edu/code
+    export SVNTMPL=https://svn.rescomp.berkeley.edu/marketing
+
+    # Development
+    alias rebuild='sudo ./Build realclean;./Build.PL;./Build;./Build test && sudo ./Build install'
+
+    # Databases
+    alias devdb='psql -h test-db -p 5433 rescomp'
+fi
