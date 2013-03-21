@@ -5,8 +5,12 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-# Color and format the prompt
+# Git niceness to put current git branch into PS1
+function parse_git_branch {
+    [[ -e `which git` && "/" != `git rev-parse --show-toplevel 2>/dev/null` ]] && git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
 
+# Color and format the prompt
 # Below is an example of a safe default, in case this script fails
 # PS1="\n\[\e[0;92m\][\t] \[\e[0;33m\]\w\[\e[0m\] \n\[\e[0;90m\]\u@\[\e[0;95m\]\h\[\e[0m\]$ "
 
@@ -33,7 +37,7 @@ prompt_path="\[\e[0;33m\]\w\[\e[0m\]"
 prompt_user="\[\e[0;90m\]\u@\[\e[0m\]"
 prompt_host="\[\e[${hname_one_color}m\]${hname_one}\[\e[${hname_two_color}m\]${hname_two}\[\e[0m\]"
 prompt_character="\$"
-PS1="\n${prompt_time} ${prompt_path}\n${prompt_user}${prompt_host}${prompt_character} "
+PS1="\n${prompt_time} ${prompt_path}\n"'$(parse_git_branch)'"${prompt_user}${prompt_host}${prompt_character} "
 
 # Environment variable exports
 export EDITOR="vim"
