@@ -5,21 +5,47 @@ if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
+# Color and format the prompt
+
+# Below is an example of a safe default, in case this script fails
+# PS1="\n\[\e[0;92m\][\t] \[\e[0;33m\]\w\[\e[0m\] \n\[\e[0;90m\]\u@\[\e[0;95m\]\h\[\e[0m\]$ "
+
+hname_colors=(
+#    "0;30" # black, looks boring
+    "0;31" # red
+    "0;32" # green
+    "0;33" # yellow
+    "0;34" # blue
+    "0;35" # purple
+    "0;36" # cyan
+    "0;37" # white
+)
+
+hname=`hostname`
+middle_index=$((`echo -n $hname | wc --chars` / 2))
+hname_one=${hname:0:$middle_index}
+hname_two=${hname:$middle_index}
+hname_one_color=${hname_colors[$((`python -c "print sum([ord(x) for x in list(\"$hname_one\")])"` % ${#hname_colors[@]}))]}
+hname_two_color=${hname_colors[$((`python -c "print sum([ord(x) for x in list(\"$hname_two\")])"` % ${#hname_colors[@]}))]}
+
+prompt_time="\[\e[0;92m\][\\t]"
+prompt_path="\[\e[0;33m\]\w\[\e[0m\]"
+prompt_user="\[\e[0;90m\]\u@\[\e[0m\]"
+prompt_host="\[\e[${hname_one_color}m\]${hname_one}\[\e[${hname_two_color}m\]${hname_two}\[\e[0m\]"
+prompt_character="\$"
+PS1="\n${prompt_time} ${prompt_path}\n${prompt_user}${prompt_host}${prompt_character} "
+
+# Environment variable exports
+export EDITOR="vim"
+export VISUAL="vim"
+
 # User specific aliases and functions
-
-PS1="\n\[\e[0;92m\][\t] \[\e[0;33m\]\w\[\e[0m\] \n\[\e[0;90m\]\u@\[\e[0;95m\]\h\[\e[0m\]$ "
-if [ -f ~/Programs/scripts/color_prompt/color_prompt.py ]; then
-    PS1=`python ~/Programs/scripts/color_prompt/color_prompt.py`
-fi
-
 if [ -f /usr/bin/virtualenvwrapper.sh ]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
 export WORKON_HOME=$HOME/.virtualenvs
 
 alias p='ps aux|grep ^`whoami`'
-export EDITOR="vim"
-export VISUAL="vim"
 
 unset command_not_found_handle
 
