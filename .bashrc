@@ -30,6 +30,22 @@ CS.Berkeley.EDU | EECS.Berkeley.EDU)
     ;;
 esac
 
+# ResComp's dnsdomainname doesn't return anything
+case "`hostname`" in
+    *.housing.berkeley.edu | *.rescomp.berkeley.edu)
+            # To pick up local paths.
+            [ -f /etc/profile ] && source /etc/profile
+
+            # Include the rescomp scripts in the path by default
+            export PATH="$PATH:/usr/local/rescomp/bin:/usr/local/rescomp/sbin"
+
+            # Default Rescomp .bashrc
+            if [ -f /rc/etc/dotfiles/system.bashrc ]; then
+                source /rc/etc/dotfiles/system.bashrc
+            fi
+        ;;
+esac
+
 ###############################################################################
 #
 # Source global definitions
@@ -132,14 +148,20 @@ export WORKON_HOME=$HOME/.virtualenvs
 #
 ###############################################################################
 
-if [[ "`hostname -f`" == *.rescomp.berkeley.edu  -a "`hostname -f`" == *.housing.berkeley.edu ]]; then
-    # Paths
-    export SVNCODE=https://svn.rescomp.berkeley.edu/code
-    export SVNTMPL=https://svn.rescomp.berkeley.edu/marketing
+case "`hostname`" in
+    *.housing.berkeley.edu | *.rescomp.berkeley.edu)
+            # Paths
+            export SVNCODE=https://svn.rescomp.berkeley.edu/code
+            export SVNTMPL=https://svn.rescomp.berkeley.edu/marketing
 
-    # Development
-    alias rebuild='sudo ./Build realclean;./Build.PL;./Build;./Build test && sudo ./Build install'
+            # Development
+            alias rebuild="sudo ./Build realclean &&
+                           ./Build.PL &&
+                           ./Build &&
+                           ./Build test
+                           && sudo ./Build install"
 
-    # Databases
-    alias devdb='psql -h test-db -p 5433 rescomp'
-fi
+            # Databases
+            alias devdb='psql -h test-db -p 5433 rescomp'
+        ;;
+esac
