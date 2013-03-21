@@ -19,11 +19,6 @@ hname_two=${hname:$middle_index}
 hname_one_color=${hname_colors[$((`python -c "print sum([ord(x) for x in list(\"$hname_one\")])"` % ${#hname_colors[@]}))]}
 hname_two_color=${hname_colors[$((`python -c "print sum([ord(x) for x in list(\"$hname_two\")])"` % ${#hname_colors[@]}))]}
 
-echo $hname_one
-echo $hname_two
-echo $hname_one_color
-echo $hname_two_color
-
 prompt_time="\[\e[0;92m\][\\t]"
 prompt_path="\[\e[0;33m\]\w\[\e[0m\]"
 prompt_user="\[\e[0;90m\]\u@\[\e[0m\]"
