@@ -51,15 +51,20 @@ esac
 # Source global definitions
 #
 ###############################################################################
-if [ -f /etc/bashrc ]; then
+if [ -r /etc/bashrc ]; then
 	. /etc/bashrc
 fi
 
-if [ -f /usr/share/bash-completion/bash_completion ]; then
+if [ -r /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion
-elif [ -f /etc/bash_completion ]; then
+elif [ -r /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+if [ -r ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
+
 
 ###############################################################################
 #
