@@ -14,9 +14,6 @@ DOMAIN=$($DOMAINNAME)
 case $DOMAIN in
 ocf.berkeley.edu)
     MAIL=/var/mail/${LOGNAME:?}
-    if [ -r /opt/ocf/share/environment/.bashrc ]; then
-        source /opt/ocf/share/environment/.bash_profile
-    fi
     if [ `/usr/bin/whoami` != "root" ]; then
         if [ -r /opt/ocf/share/environment/.bashrc ]; then
             source /opt/ocf/share/environment/.bashrc
