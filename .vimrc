@@ -33,6 +33,9 @@ filetype indent on
 
 set visualbell
 
+" Search for tags files all the way up to root
+set tags=./tags;
+
 " -------------------------------------------------------------------------------
 "
 " Content editing appearance
