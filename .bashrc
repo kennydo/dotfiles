@@ -82,6 +82,17 @@ hname_colors=(
     "0;37" # white
 )
 
+function hash_ascii {
+    local s=0
+    local i=0
+    for char in `echo "$1" | fold -w1`
+    do
+        i=`echo "$char" | od -t d1 | head -n 1 | awk '{print $2}'`
+        s=$(($s+$i))
+    done
+    echo "$s"
+}
+
 case $OSTYPE in
     solaris*)   hname=`hostname` ;;
     *)          hname=`hostname -s` ;;
@@ -89,8 +100,8 @@ esac
 middle_index=$((`echo -n $hname | wc -m` / 2))
 hname_one=${hname:0:$middle_index}
 hname_two=${hname:$middle_index}
-hname_one_color=${hname_colors[$((`python -c "print sum([ord(x) for x in list(\"$hname_one\")])"` % ${#hname_colors[@]}))]}
-hname_two_color=${hname_colors[$((`python -c "print sum([ord(x) for x in list(\"$hname_two\")])"` % ${#hname_colors[@]}))]}
+hname_one_color=${hname_colors[`hash_ascii "$hname_one"` % ${#hname_colors[@]}]}
+hname_two_color=${hname_colors[`hash_ascii "$hname_two"` % ${#hname_colors[@]}]}
 
 prompt_time="\[\e[0;92m\][\\t]"
 prompt_path="\[\e[0;33m\]\w\[\e[0m\]"
