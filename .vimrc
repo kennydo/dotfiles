@@ -88,7 +88,13 @@ set smarttab
 set shiftround
 
 " PEP8 wants to limit all lines to 79, and flowing blocks of text to 72
-set textwidth=72
+"
+" setting textwidth makes vim auto-break the line
+" set textwidth=72
+"
+" we can just color the overly long lines instead
+highlight OverLength ctermbg=darkyellow ctermfg=white
+match OverLength /\%73v.\+/
 
 " -------------------------------------------------------------------------------
 "
