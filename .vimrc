@@ -7,6 +7,9 @@
 " Make sure this is first, since it affects other settings
 set nocompatible
 
+" try to load pathogen, fail silently
+silent! execute pathogen#infect()
+
 " allow backspacing over everything in insert mode
 set bs=indent,eol,start
 
@@ -117,3 +120,5 @@ set showmatch
 " -----------------------------------------------------------------------------
 " Toggle line numbers and fold column for easy copying:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
+
+let mapleader = ","
