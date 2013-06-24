@@ -1,8 +1,8 @@
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "
 " General
 "
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Use VIM settings, not VI settings
 " Make sure this is first, since it affects other settings
 set nocompatible
@@ -16,7 +16,7 @@ set viminfo='20,\"50
 " keep 50 lines of command history
 set history=50
 
-" Make a backup before overwriting a file.  The backup is removed 
+" Make a backup before overwriting a file.  The backup is removed
 " after the file was successfully written
 set writebackup
 
@@ -36,11 +36,11 @@ set visualbell
 " Search for tags files all the way up to root
 set tags=./tags;
 
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "
 " Content editing appearance
 "
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 " for terminals with dark backgrounds
 set background=dark
@@ -56,24 +56,27 @@ hi cursorline cterm=NONE ctermbg=darkblue ctermfg=white guibg=darkblue guifg=whi
 
 syntax enable
 
-" Show the cursor position all the time 
+" Show the cursor position all the time
 set ruler
 
+" Show trailing space characters
+set list listchars=trail:·
 
-" -------------------------------------------------------------------------------
+
+" -----------------------------------------------------------------------------
 "
 " Status bar appearance
 "
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 " show the mode you're in
 set showmode
 
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "
 " Formatting
 "
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 
 " always enable autoindenting
 set autoindent
@@ -90,20 +93,11 @@ set smarttab
 " round indent to multiple of shiftwidth
 set shiftround
 
-" PEP8 wants to limit all lines to 79, and flowing blocks of text to 72
-"
-" setting textwidth makes vim auto-break the line
-" set textwidth=79
-"
-" we can just color the overly long lines instead
-highlight OverLength ctermbg=darkyellow ctermfg=white
-match OverLength /\%80v.\+/
-
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "
 " Searching
 "
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " incremental search
 set incsearch
 
@@ -116,10 +110,10 @@ set hlsearch
 " show matching bracket
 set showmatch
 
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 "
 " Mappings
 "
-" -------------------------------------------------------------------------------
+" -----------------------------------------------------------------------------
 " Toggle line numbers and fold column for easy copying:
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
