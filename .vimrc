@@ -122,3 +122,11 @@ set showmatch
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 let mapleader = ","
+
+" -----------------------------------------------------------------------------
+"
+" Plugin-specific settings
+"
+" -----------------------------------------------------------------------------
+
+let g:nerdtree_tabs_open_on_console_startup = 1
