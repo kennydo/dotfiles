@@ -122,6 +122,8 @@ set showmatch
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
 let mapleader = ","
+nnoremap <Leader>n :tabprev <CR>
+nnoremap <Leader>m :tabnext <CR>
 
 " -----------------------------------------------------------------------------
 "
