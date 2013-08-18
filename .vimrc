@@ -79,6 +79,9 @@ set list listchars=trail:·
 " show the mode you're in
 set showmode
 
+" always show the tab bar
+set showtabline=2
+
 " -----------------------------------------------------------------------------
 "
 " Formatting
