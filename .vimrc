@@ -10,6 +10,10 @@ set nocompatible
 " try to load pathogen, fail silently
 silent! execute pathogen#infect()
 
+" enable mouse for all modes
+set mouse=a
+set ttymouse=xterm2
+
 " allow backspacing over everything in insert mode
 set bs=indent,eol,start
 
