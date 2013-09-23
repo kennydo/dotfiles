@@ -127,9 +127,11 @@ export PAGER="less"
 
 # Don't export xterm if we already exported screen (probably remote ssh)
 [ "$TERM" != "screen-256color" ] && export TERM='xterm-256color'
-# Only export screen if we're in tmux.
-[ -n "$TMUX" ] && export TERM=screen-256color
+
 export TERM=xterm-256color
+
+# Only export screen if we're in tmux. irssi has issues scrolling if TERM=xterm
+[ -n "$TMUX" ] && export TERM=screen-256color
 
 ###############################################################################
 #
