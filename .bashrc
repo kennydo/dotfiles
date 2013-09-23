@@ -141,6 +141,7 @@ case $OSTYPE in
     solaris*)   alias ls='ls' ;;
     freebsd*)   alias ls='ls -G' ;;
     linux-gnu)  alias ls='ls --color=auto' ;;
+    darwin*)    alias ls='ls -G' ;;
     *)          alias ls='ls';;
 esac
 alias sl='ls';
