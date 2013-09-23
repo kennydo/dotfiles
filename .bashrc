@@ -138,7 +138,7 @@ export TERM=xterm-256color
 ###############################################################################
 alias p='ps aux|grep ^`whoami`'
 case $OSTYPE in
-    solaris*)   alias ls='ls -G' ;;
+    solaris*)   alias ls='ls' ;;
     freebsd*)   alias ls='ls -G' ;;
     linux-gnu)  alias ls='ls --color=auto' ;;
     *)          alias ls='ls';;
