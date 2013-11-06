@@ -163,6 +163,10 @@ if [ -r /usr/bin/virtualenvwrapper.sh ]; then
 fi
 export WORKON_HOME=$HOME/.virtualenvs
 
+# for android studio
+if [ -d /opt/android/android-studio/bin ]; then
+    export PATH="$PATH:/opt/android/android-studio/bin"
+fi
 
 ###############################################################################
 #
