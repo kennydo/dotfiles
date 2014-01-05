@@ -150,6 +150,7 @@ alias sl='ls';
 
 alias grep='grep --color=auto'
 alias mutt='mutt -y'
+alias salt='salt --show-timeout'
 
 ###############################################################################
 #
