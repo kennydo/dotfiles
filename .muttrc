@@ -1,0 +1,106 @@
+##
+# Mailboxes
+##
+set mbox_type='Maildir'   # Store messages in individual files
+set folder='~/Maildir'       # Default location of mailboxes
+set spoolfile='~/Maildir'    # Folder for new incoming mail
+set record='+.sent'        # Folder for sent mail
+set postponed='+.drafts'   # Folder for unfinished drafts
+set move=no               # Do not move read messages to mbox
+set copy=yes              # Save copies of outgoing messages
+set postpone=ask-yes      # Prompt to decide if draft should be saved 
+set mail_check=60         # Update mailbox status every 60 seconds
+
+# Mailbox listing
+mailboxes '~/Maildir'
+
+set editor='vim'      # Use GNU nano for editing (or vim, emacs)
+set include=yes        # Quote message in reply= <br />
+
+##
+# Interface
+##
+set beep=yes               # No alert bell
+set status_on_top=yes     # Place status bar at top
+set menu_scroll=yes       # Scroll menus by line instead of by page
+set mark_old=no           # Do not distinguish between "new" and "old" unread messages
+set confirmappend=no      # Do not prompt on saving messages to other mailbox
+set sleep_time=0          # No delay in changing mailboxes
+
+set sort=threads                  # Sort index by threads (newest at bottom)
+set sort_aux=last-date-received   # Sort threads based on branch with most recent date
+set strict_threads=yes            # Thread using only In-Reply-To and References header fields
+set sort_browser=alpha            # Sort entries in the browser alphabetically
+
+set pager_stop=yes        # Halt pager at end of message instead of moving to the next one
+set pager_context=2       # Retain number of lines as context when paging up/down
+set pager_index_lines=5   # Display a mini-index in pager
+set markers=no            # Do not use '+' to indicate wrapped lines
+set tilde=yes             # Pad blank lines on bottom with '~'
+
+set status_format=' %r %f %l    Unread: %u  Del: %d  Msgs Shown: %M %> %V [%P] '
+set pager_format=' %a %> %[%a, %b %d  %R] '
+set index_format='%4C %Z %[%b%d] %-15.15F %s'
+set folder_format='%2C %8s %d %N %f'
+
+# Use arrow keys to scroll in pager
+bind pager <Up> previous-line
+bind pager <Down> next-line 
+
+ignore *                  # Allow only certain header fields
+unignore  Date To Cc From Subject X-Mailer Organization User-Agent
+hdr_order Date From To Cc Subject X-Mailer User-Agent Organization
+
+##
+# Macros
+##
+macro   index   q   '<change-folder>?<toggle-mailboxes>'
+macro   browser q   '<exit><quit>'
+
+##
+# Color Scheme
+##
+# (16 colors available)
+# default
+# black
+# white, brightwhite
+# red, brightred
+# blue, brightblue
+# yellow, brightyellow
+# green, brightgreen
+# cyan, brightcyan
+# magenta, brightmagenta
+
+color normal        white default   # When no other coloring is found
+color attachment    magenta black           # Attachment banners
+color hdrdefault    cyan default            # Default header colors
+color indicator     black green             # Selector
+color quoted        cyan default            # Level1 Quoted Text
+color quoted1       yellow default          # Level2   "      "
+color quoted2       magenta default         # Level3   "      "
+color quoted3       green default           # Level4   "      "
+color quoted4       red default             # Level5   "      "
+color signature     yellow default          # After the --
+color status        brightwhite blue        # Status bars
+color tree          red default             # Tree indicator for threads
+
+# Index
+color index green default       "~A ~N | ~O"  # All unread messages
+color index brightblack yellow  "~F"          # Flagged
+color index brightwhite blue    "~T"          # Tagged
+color index brightwhite red     "~D"          # Marked for deletion
+color index black cyan          "~="          # Duplicates
+
+# PGP messages
+color body white           default "^gpg: "
+color body brightgreen     default "^gpg: Good signature .*"
+color body brightyellow    default "^gpg: WARNING.*"
+color body brightred       black   "^gpg: BAD signature from.*"
+
+color  header  brightcyan  default  '^From:'
+color  header  brightcyan  default  '^Subject:'
+
+color  body  brightblue  default  '[A-Za-z][-A-Za-z0-9+.]*://[-A-Za-z0-9_.~%+:@/?#=&]+'     # Highlight URIs
+color  body  brightblue  default  '[-A-Za-z0-9._]+@[-A-Za-z0-9._]+\.[A-Za-z]+'              # Highlight email addresses
+
+# vim:ft=muttrc
