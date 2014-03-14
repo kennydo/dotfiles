@@ -169,6 +169,11 @@ if [ -d /opt/android/android-studio/bin ]; then
     export PATH="$PATH:/opt/android/android-studio/bin"
 fi
 
+# for pycharm
+if [ -d /opt/pycharm/bin ]; then
+    export PATH="$PATH:/opt/pycharm/bin"
+fi
+
 ###############################################################################
 #
 # ResComp-specific aliases
