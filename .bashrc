@@ -162,6 +162,9 @@ alias salt='salt --show-timeout'
 if [ -r /usr/bin/virtualenvwrapper.sh ]; then
     source /usr/bin/virtualenvwrapper.sh
 fi
+if [ -r /usr/local/bin/virtualenvwrapper.sh ]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 export WORKON_HOME=$HOME/.virtualenvs
 
 # for android studio
