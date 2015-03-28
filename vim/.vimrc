@@ -7,9 +7,6 @@
 " Make sure this is first, since it affects other settings
 set nocompatible
 
-" try to load pathogen, fail silently
-silent! execute pathogen#infect()
-
 " enable mouse for all modes
 set mouse=a
 set ttymouse=xterm2
@@ -42,6 +39,26 @@ set visualbell
 
 " Search for tags files all the way up to root
 set tags=./tags;
+
+" -----------------------------------------------------------------------------
+"
+" Vundle stuff
+"
+" -----------------------------------------------------------------------------
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+silent! call vundle#begin()
+
+" let Vundle manage Vundle, required
+silent! Plugin 'gmarik/Vundle.vim'
+
+" the plugins I like
+silent! Plugin 'scrooloose/nerdcommenter'
+silent! Plugin 'scrooloose/nerdtree'
+silent! Plugin 'jistr/vim-nerdtree-tabs'
+
+" All of your Plugins must be added before the following line
+silent! call vundle#end()
 
 " -----------------------------------------------------------------------------
 "
