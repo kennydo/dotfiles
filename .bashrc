@@ -11,37 +11,6 @@ DOMAIN=$($DOMAINNAME)
 # Source configs based on DNS domain
 #
 ###############################################################################
-case $DOMAIN in
-ocf.berkeley.edu)
-    MAIL=/var/mail/${LOGNAME:?}
-    if [ `/usr/bin/whoami` != "root" ]; then
-        if [ -r /opt/ocf/share/environment/.bashrc ]; then
-            source /opt/ocf/share/environment/.bashrc
-        fi
-    fi
-    ;;
-CS.Berkeley.EDU | EECS.Berkeley.EDU)
-    [[ -z ${MASTER} ]] && export MASTER=${LOGNAME%-*}
-    [[ -z ${MASTERDIR} ]] && export MASTERDIR=$(eval echo ~${MASTER})
-    [[ -e ${MASTERDIR}/adm/class.bash_profile ]] && . ${MASTERDIR}/adm/class.bash_profile
-    ;;
-esac
-
-# ResComp's dnsdomainname doesn't return anything
-case "`hostname`" in
-    *.housing.berkeley.edu | *.rescomp.berkeley.edu)
-            # To pick up local paths.
-            [ -f /etc/profile ] && source /etc/profile
-
-            # Include the rescomp scripts in the path by default
-            export PATH="$PATH:/usr/local/rescomp/bin:/usr/local/rescomp/sbin"
-
-            # Default Rescomp .bashrc
-            if [ -f /rc/etc/dotfiles/system.bashrc ]; then
-                source /rc/etc/dotfiles/system.bashrc
-            fi
-        ;;
-esac
 
 ###############################################################################
 #
@@ -177,26 +146,3 @@ if [ -d /opt/pycharm/bin ]; then
     export PATH="$PATH:/opt/pycharm/bin"
 fi
 
-###############################################################################
-#
-# ResComp-specific aliases
-#
-###############################################################################
-
-case "`hostname`" in
-    *.housing.berkeley.edu | *.rescomp.berkeley.edu)
-            # Paths
-            export SVNCODE=https://svn.rescomp.berkeley.edu/code
-            export SVNTMPL=https://svn.rescomp.berkeley.edu/marketing
-
-            # Development
-            alias rebuild="sudo ./Build realclean &&
-                           ./Build.PL &&
-                           ./Build &&
-                           ./Build test
-                           && sudo ./Build install"
-
-            # Databases
-            alias devdb='psql -h test-db -p 5433 rescomp'
-        ;;
-esac
