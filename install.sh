@@ -1,6 +1,11 @@
 #!/bin/bash
 
 case "$1" in
+    atom)
+        echo "Installing atom config"
+        ln -s `readlink -f atom/.atom` ~/
+        apm install --packages-file atom/package_list.txt
+        ;;
     bash)
         echo "Installing bash"
         ln -s `readlink -f bash/.bash_profile` ~/
