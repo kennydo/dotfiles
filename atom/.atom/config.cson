@@ -1,0 +1,18 @@
+"*":
+  editor:
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+    tabLength: 4
+  core:
+    themes: [
+      "one-dark-ui"
+      "monokai"
+    ]
+  minimap: {}
+  welcome:
+    showOnStartup: false
+  linter: {}
+  "linter-flake8": {}
+  "exception-reporting":
+    userId: "ff13ef6b-6826-6632-b223-392769c419f1"
