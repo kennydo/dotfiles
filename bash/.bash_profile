@@ -10,3 +10,7 @@ fi
 PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
+
+if [ -f ~/.bash_profile.local ]; then
+  source ~/.bash_profile.local
+fi
