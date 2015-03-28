@@ -6,6 +6,10 @@ case "$1" in
         ln -s `readlink -f bash/.bash_profile` ~/
         ln -s `readlink -f bash/.bashrc` ~/
         ;;
+    mutt)
+        echo "Installing mutt"
+        ln -s `readlink -f mutt/.muttrc` ~/
+        ;;
     tmux)
         echo "Installing tmux"
         ln -s `readlink -f tmux/.tmux.conf` ~/
