@@ -13,8 +13,7 @@
   welcome:
     showOnStartup: false
   linter: {}
-  "linter-flake8": {
-    "executableDir": "/usr/local/bin"
-  }
+  "linter-flake8":
+    executableDir: "/usr/local/bin"
   "exception-reporting":
     userId: "ff13ef6b-6826-6632-b223-392769c419f1"
