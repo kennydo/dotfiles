@@ -158,3 +158,12 @@ nnoremap <Leader>m :tabnext <CR>
 let g:nerdtree_tabs_open_on_console_startup = 0
 " Toggle nerdtree with F9
 nnoremap <F9> :NERDTreeToggle<CR>
+
+" -----------------------------------------------------------------------------
+"
+" Local settings
+"
+" -----------------------------------------------------------------------------
+if filereadable(glob("~/.vimrc.local"))
+    source ~/.vimrc.local
+endif
