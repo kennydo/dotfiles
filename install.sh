@@ -1,15 +1,16 @@
 #!/bin/bash
+PWD=$(pwd)
 
 case "$1" in
     atom)
         echo "Installing atom config"
-        ln -s `readlink -f atom/.atom` ~/
+        ln -s $PWD/atom/.atom ~/
         apm install --packages-file atom/package_list.txt
         ;;
     bash)
         echo "Installing bash"
-        ln -s `readlink -f bash/.bash_profile` ~/
-        ln -s `readlink -f bash/.bashrc` ~/
+        ln -s $PWD/bash/.bash_profile ~/
+        ln -s $PWD/bash/.bashrc ~/
         ;;
     git)
         echo "Installing git"
@@ -22,7 +23,7 @@ case "$1" in
             git config --global user.email "$email"
         fi
 
-        cp `readlink -f git/.gitignore_global` ~/
+        ln -s $PWD/git/.gitignore_global ~/
 
         git config --global core.editor "vim"
         git config --global core.excludesfile ~/.gitignore_global
@@ -36,23 +37,23 @@ case "$1" in
         ;;
     mutt)
         echo "Installing mutt"
-        ln -s `readlink -f mutt/.muttrc` ~/
+        ln -s $PWD/mutt/.muttrc ~/
         ;;
     tmux)
         echo "Installing tmux"
-        ln -s `readlink -f tmux/.tmux.conf` ~/
+        ln -s $PWD/tmux/.tmux.conf ~/
         ;;
     vim)
         echo "Installing vim"
-        ln -s `readlink -f vim/.vimrc` ~/
+        ln -s $PWD/vim/.vimrc ~/
         mkdir -p ~/.vim/bundle
         git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
         vim +PluginInstall +qall
         ;;
     zsh)
         echo "Installing zsh"
-        ln -s `readlink -f zsh/.zshrc` ~/
-        ln -s `readlink -f zsh/.zsh_custom` ~/
+        ln -s $PWD/zsh/.zshrc ~/
+        ln -s $PWD/zsh/.zsh_custom ~/
         ;;
     *)
         echo $"Unrecognized installable: $1"
