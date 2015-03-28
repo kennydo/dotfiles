@@ -47,18 +47,18 @@ set tags=./tags;
 " -----------------------------------------------------------------------------
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+silent! call vundle#begin()
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+silent! Plugin 'gmarik/Vundle.vim'
 
 " the plugins I like
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
+silent! Plugin 'scrooloose/nerdcommenter'
+silent! Plugin 'scrooloose/nerdtree'
+silent! Plugin 'jistr/vim-nerdtree-tabs'
 
 " All of your Plugins must be added before the following line
-call vundle#end()
+silent! call vundle#end()
 
 " -----------------------------------------------------------------------------
 "
