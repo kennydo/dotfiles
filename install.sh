@@ -44,6 +44,11 @@ case "$1" in
         git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
         vim +PluginInstall +qall
         ;;
+    zsh)
+        echo "Installing zsh"
+        ln -s `readlink -f zsh/.zshrc` ~/
+        ln -s `readlink -f zsh/.zsh_custom` ~/
+        ;;
     *)
         echo $"Unrecognized installable: $1"
         exit 1
