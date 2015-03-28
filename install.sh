@@ -37,6 +37,13 @@ case "$1" in
         echo "Installing tmux"
         ln -s `readlink -f tmux/.tmux.conf` ~/
         ;;
+    vim)
+        echo "Installing vim"
+        ln -s `readlink -f vim/.vimrc` ~/
+        mkdir -p ~/.vim/bundle
+        git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+        vim +PluginInstall +qall
+        ;;
     *)
         echo $"Unrecognized installable: $1"
         exit 1
