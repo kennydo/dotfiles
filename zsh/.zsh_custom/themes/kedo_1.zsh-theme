@@ -31,8 +31,8 @@ function hash_ascii {
 }
 hname=`hostname -s`
 middle_index=$((`echo -n $hname | wc -m` / 2))
-hname_one=${hname:0:$middle_index}
-hname_two=${hname:$middle_index}
+hname_one=$hname[1,$middle_index]
+hname_two=$hname[(($middle_index + 1)),${#hname}]
 # bash arrays are 0-indexed, while zsh arrays are 1-indexed, so add 1
 hname_one_color=${hname_colors[`hash_ascii "$hname_one"` % (${#hname_colors[@]}) + 1]}
 hname_two_color=${hname_colors[`hash_ascii "$hname_two"` % (${#hname_colors[@]}) + 1]}
