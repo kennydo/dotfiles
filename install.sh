@@ -54,6 +54,7 @@ case "$1" in
         echo "Installing zsh"
         ln -s $PWD/zsh/.zshrc ~/
         ln -s $PWD/zsh/.zsh_custom ~/
+        git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
         ;;
     *)
         echo $"Unrecognized installable: $1"
