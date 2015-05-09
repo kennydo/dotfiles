@@ -4,6 +4,7 @@
     showIndentGuide: true
     showInvisibles: true
     tabLength: 4
+    softWrap: true
   core:
     themes: [
       "one-dark-ui"
@@ -17,3 +18,6 @@
     executableDir: "/usr/local/bin"
   "exception-reporting":
     userId: "ff13ef6b-6826-6632-b223-392769c419f1"
+".js.source":
+  editor:
+    tabLength: 2
