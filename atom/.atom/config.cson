@@ -18,6 +18,7 @@
     executableDir: "/usr/local/bin"
   "exception-reporting":
     userId: "ff13ef6b-6826-6632-b223-392769c419f1"
+  pigments: {}
 ".basic.html.text":
   editor:
     tabLength: 2
