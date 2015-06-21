@@ -1,4 +1,4 @@
-linter@0.12.6
+linter@0.12.7
 linter-flake8@1.4.2
 minimap@4.9.0
 monokai@0.14.0
