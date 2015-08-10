@@ -12,6 +12,9 @@
       "one-dark-ui"
       "monokai"
     ]
+    disabledPackages: [
+      "wrap-guide"
+    ]
   minimap: {}
   welcome:
     showOnStartup: false
@@ -24,7 +27,24 @@
   "exception-reporting":
     userId: "ff13ef6b-6826-6632-b223-392769c419f1"
   pigments: {}
+  "multi-wrap-guide":
+    locked: true
 ".basic.html.text":
+  editor:
+    tabLength: 2
+".null-grammar.plain.text":
+  "multi-wrap-guide":
+    columns: [
+      80
+      120
+    ]
+    rows: []
+  editor:
+    preferredLineLength: 120
+".python.source":
+  editor:
+    tabLength: 2
+".json.source":
   editor:
     tabLength: 2
 ".js.source":
@@ -32,9 +52,3 @@
     tabLength: 2
   "linter-jsonlint":
     jsonlintExecutablePath: "/usr/local/bin"
-".json.source":
-  editor:
-    tabLength: 2
-".python.source":
-  editor:
-    tabLength: 2
