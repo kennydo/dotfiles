@@ -1,5 +1,6 @@
 wrapper_paths=(
     /usr/share/virtualenvwrapper/virtualenvwrapper.sh # ubuntu/debian puts it here
+    /etc/bash_completion.d/virtualenvwrapper # debian wheezy puts it here
     /usr/bin/virtualenvwrapper.sh
     /usr/local/bin/virtualenvwrapper.sh
 )
