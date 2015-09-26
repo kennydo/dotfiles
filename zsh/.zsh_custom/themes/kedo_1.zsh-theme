@@ -44,4 +44,4 @@ RPROMPT='%{${lineup}%}%{$FG[118]%}[%*]%{$reset_color%}%{${linedown}%}'
 
 PROMPT='
 %{$FG[220]%}%~%{$reset_color%} $(git_prompt_info)
-%{$NCOLOR%}%n@%{$reset_color%}%{$fg[$hname_one_color]%}$hname_one%{$fg[$hname_two_color]%}$hname_two%{$reset_color%}%(!.#.$) '
+%{$NCOLOR%}%n@%{$reset_color%}%{$fg[$hname_one_color]%}$hname_one%{$fg[$hname_two_color]%}$hname_two%{$reset_color%}%(?,%F{green}✅,%F{red}🚫) %(!.#.$)%{$reset_color%} '
