@@ -14,6 +14,7 @@
     ]
     disabledPackages: [
       "wrap-guide"
+      "linter-flake8"
     ]
   minimap: {}
   welcome:
