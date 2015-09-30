@@ -86,6 +86,9 @@ set ruler
 " Show trailing space characters
 set list listchars=trail:·
 
+" Highlight unicode in a file
+autocmd BufRead * syntax match nonascii "[^\u0000-\u007F]"
+highlight nonascii guibg=Red ctermbg=1 term=standout
 
 " -----------------------------------------------------------------------------
 "
