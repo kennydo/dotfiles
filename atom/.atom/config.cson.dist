@@ -6,7 +6,7 @@
     softWrap: true
     tabLength: 4
     autoIndentOnPaste: false
-    fontSize: 12
+    fontSize: 13
   core:
     themes: [
       "one-dark-ui"
@@ -30,9 +30,6 @@
   pigments: {}
   "multi-wrap-guide":
     locked: true
-".basic.html.text":
-  editor:
-    tabLength: 2
 ".null-grammar.plain.text":
   "multi-wrap-guide":
     columns: [
@@ -42,10 +39,7 @@
     rows: []
   editor:
     preferredLineLength: 120
-".python.source":
-  editor:
-    tabLength: 2
-".json.source":
+".basic.html.text":
   editor:
     tabLength: 2
 ".js.source":
@@ -53,3 +47,9 @@
     tabLength: 2
   "linter-jsonlint":
     jsonlintExecutablePath: "/usr/local/bin"
+".json.source":
+  editor:
+    tabLength: 2
+".python.source":
+  editor:
+    tabLength: 2
