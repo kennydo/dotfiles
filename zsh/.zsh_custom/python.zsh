@@ -1,3 +1,4 @@
+# Set up virtualenv wrapper
 wrapper_paths=(
     /usr/share/virtualenvwrapper/virtualenvwrapper.sh # ubuntu/debian puts it here
     /etc/bash_completion.d/virtualenvwrapper # debian wheezy puts it here
@@ -15,3 +16,6 @@ unset wrapper_paths, f
 export WORKON_HOME=$HOME/.virtualenvs
 
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+# Load my default virtualenv
+[ -s "$HOME/.virtualenvs/default/bin/activate" ] && source "$HOME/.virtualenvs/default/bin/activate"
