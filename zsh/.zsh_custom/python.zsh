@@ -16,6 +16,3 @@ unset wrapper_paths, f
 export WORKON_HOME=$HOME/.virtualenvs
 
 export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
-
-# Load my default virtualenv
-[ -s "$HOME/.virtualenvs/default/bin/activate" ] && source "$HOME/.virtualenvs/default/bin/activate"
