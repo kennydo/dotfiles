@@ -1,3 +1,3 @@
-export GOPATH=~/Programs/golang
+export GOPATH=~/Workspace/golang
 
 export PATH=$PATH:$GOPATH/bin
