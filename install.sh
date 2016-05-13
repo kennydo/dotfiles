@@ -45,6 +45,10 @@ case "$1" in
         echo "Installing mutt"
         ln -s $PWD/mutt/.muttrc ~/
         ;;
+    osx)
+        echo "Configuring some OSX settings"
+        bash osx/configure.sh
+        ;;
     tmux)
         echo "Installing tmux"
         ln -s $PWD/tmux/.tmux.conf ~/
