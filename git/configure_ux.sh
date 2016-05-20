@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 git config --global core.editor "vim"
 

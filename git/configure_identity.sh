@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 if [ -z "`git config --global user.name`" ]; then
     read -p "Name: " name
