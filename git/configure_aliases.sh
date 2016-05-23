@@ -11,3 +11,5 @@ git config --global alias.ci commit
 git config --global alias.st status
 
 git config --global alias.pof "push origin --force-with-lease"
+
+git config --global alias.cleanup-local-repo "!git checkout master ; git fetch -p ; git merge origin/master ; git cleanup-merged-branches"
