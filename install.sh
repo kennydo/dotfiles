@@ -15,7 +15,7 @@ case "$1" in
         ;;
     git)
         echo "Installing git"
-        bash git/install_gitignore.sh
+        bash git/install.sh
         bash git/configure_identity.sh
         bash git/configure_ux.sh
         bash git/configure_aliases.sh

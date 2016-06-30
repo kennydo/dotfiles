@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [[ "$(git branch-name)" == "master" ]]
+then
+    echo "You cannot publish from master"
+    exit 1
+fi
+
+git push -u origin $(git branch-name)
