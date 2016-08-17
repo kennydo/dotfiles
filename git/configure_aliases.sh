@@ -24,3 +24,5 @@ git config --global alias.cleanup-merged-branches '!git branch --merged | grep -
 # Use this before starting a new feature branch to make sure I'm up to date
 git config --global alias.cleanup-local-repo '!git checkout master ; git fetch -p ; git merge origin/master ; git cleanup-merged-branches'
 
+# Compare this branch to its merge base
+git config --global alias.diff-merge-base '!f() { git diff $(git merge-base $1 $(git branch-name))..$(git branch-name); }; f'
