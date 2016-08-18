@@ -18,6 +18,9 @@ git config --global alias.pof 'push origin --force-with-lease'
 # Not useful by itself, but is used by several aliases
 git config --global alias.branch-name '!git rev-parse --abbrev-ref HEAD'
 
+# Set the upstream so that the "pof" alias works
+git config --global alias.publish '!git push -u origin $(git branch-name)'
+
 # Remove branches that have been merged upstream
 git config --global alias.cleanup-merged-branches '!git branch --merged | grep -v "\\*\\|master\\|release" | xargs -n 1 git branch -d'
 
