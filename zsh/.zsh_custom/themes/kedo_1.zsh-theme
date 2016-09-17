@@ -40,8 +40,7 @@ hname_two_color=${hname_colors[`hash_ascii "$hname_two"` % (${#hname_colors[@]})
 lineup=$'\e[1A'
 linedown=$'\e[1B'
 
-RPROMPT='%{${lineup}$FG[118]%}[%*]%{$reset_color${linedown}%}'
 
 PROMPT='
-%{$FG[220]%}%~%{$reset_color%} $(git_prompt_info)
+%{$FG[118]%}[%*]%{$reset_color%} %{$FG[220]%}%~%{$reset_color%} $(git_prompt_info)
 %{$NCOLOR%}%n@%{$reset_color%}%{$fg[$hname_one_color]%}$hname_one%{$fg[$hname_two_color]%}$hname_two%{$reset_color%}%(?,%{%F{green}%}✅,%{%F{red}%}🚫) %(!.#.$)%{%f%b%} '
