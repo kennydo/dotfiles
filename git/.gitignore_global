@@ -1,4 +1,6 @@
 flask_debugtoolbar.db
+.activate.sh
+.deactivate.sh
 
 # Visual Studio Code
 .vscode/
