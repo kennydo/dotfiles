@@ -53,7 +53,6 @@ silent! call vundle#begin()
 silent! Plugin 'gmarik/Vundle.vim'
 
 " the plugins I like
-silent! Plugin 'scrooloose/nerdcommenter'
 silent! Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
@@ -150,6 +149,10 @@ nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 let mapleader = ","
 nnoremap <Leader>n :tabprev <CR>
 nnoremap <Leader>m :tabnext <CR>
+
+" Block indent
+vmap > >gv
+vmap < <gv
 
 " -----------------------------------------------------------------------------
 "
