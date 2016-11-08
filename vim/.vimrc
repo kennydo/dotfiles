@@ -53,6 +53,7 @@ silent! call vundle#begin()
 silent! Plugin 'gmarik/Vundle.vim'
 
 " the plugins I like
+silent! Plugin 'airblade/vim-gitgutter'
 silent! Plugin 'ctrlpvim/ctrlp.vim'
 
 " All of your Plugins must be added before the following line
