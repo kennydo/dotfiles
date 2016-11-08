@@ -11,6 +11,8 @@ git config --global alias.st status
 # I want to avoid using "--force"
 git config --global alias.pof 'push origin --force-with-lease'
 
+git config --global alias.rom 'rebase origin/master'
+
 #
 # Configure git workflow-y aliases
 #
