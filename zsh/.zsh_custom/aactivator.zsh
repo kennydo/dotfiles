@@ -19,6 +19,7 @@ install-aactivator-for-venv() {
 
     ln -s "$venvDir/bin/activate" .activate.sh
     echo '#!/usr/bin/bash\n\ndeactivate' > .deactivate.sh
+    chmod go-w .deactivate.sh
 
     echo "Successfully installed aactivator for $venvDir"
 }
