@@ -55,6 +55,7 @@ silent! Plugin 'gmarik/Vundle.vim'
 " the plugins I like
 silent! Plugin 'airblade/vim-gitgutter'
 silent! Plugin 'ctrlpvim/ctrlp.vim'
+silent! Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 silent! call vundle#end()
@@ -67,6 +68,9 @@ silent! call vundle#end()
 
 " for terminals with dark backgrounds
 set background=dark
+
+" Use the molokai colorscheme if it's available
+silent! colorscheme molokai
 
 " show line numbers - make use of the extra screen real-estate with
 " textwidth set to 72.  Up to 4 digits are okay for line numbers
