@@ -6,7 +6,6 @@ case "$1" in
         echo "Installing atom config"
         ln -s $PWD/atom/.atom ~/
         cp $PWD/atom/.atom/config.cson{.dist,}
-        apm install --packages-file atom/package_list.txt
         ;;
     bash)
         echo "Installing bash"
