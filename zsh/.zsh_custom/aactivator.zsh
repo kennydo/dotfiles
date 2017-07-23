@@ -1,4 +1,6 @@
-eval "$(aactivator.py init)"
+if $(type  aactivator.py &> /dev/null); then
+    eval "$(aactivator.py init)"
+fi
 
 install-aactivator-for-venv() {
     local venvDir=venv
