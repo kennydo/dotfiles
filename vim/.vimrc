@@ -3,6 +3,9 @@
 " General
 "
 " -----------------------------------------------------------------------------
+scriptencoding utf-8
+set encoding=utf-8
+
 " Use VIM settings, not VI settings
 " Make sure this is first, since it affects other settings
 set nocompatible
