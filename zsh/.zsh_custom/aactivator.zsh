@@ -1,4 +1,4 @@
-if $(type  aactivator.py &> /dev/null); then
+if $(type aactivator.py &> /dev/null); then
     eval "$(aactivator.py init)"
 fi
 
