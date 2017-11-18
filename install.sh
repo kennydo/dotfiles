@@ -40,9 +40,10 @@ case "$1" in
         ;;
     zsh)
         echo "Installing zsh"
+        mkdir ~/.antigen_install
+        curl -L git.io/antigen > ~/.antigen_install/antigen.zsh
         ln -s $PWD/zsh/.zshrc ~/
         ln -s $PWD/zsh/.zsh_custom ~/
-        git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
         ;;
     *)
         echo $"Unrecognized installable: $1"
