@@ -7,3 +7,7 @@ case $OSTYPE in
         alias cal='/usr/local/bin/gcal'
         ;;
 esac
+
+# used for https://github.com/jocelynmallon/zshmarks
+alias j="jump"
+
