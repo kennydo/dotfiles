@@ -8,7 +8,7 @@ antigen bundle httpie
 antigen bundle git
 antigen bundle jocelynmallon/zshmarks
 
-antigen bundle ~/.zsh_custom
-antigen theme ~/.zsh_custom/themes/kedo_1.zsh-theme
+antigen bundle kennydo/dotfiles zsh/.zsh_custom
+antigen theme kennydo/dotfiles zsh/.zsh_custom/themes/kedo_1.zsh-theme
 
 antigen apply
