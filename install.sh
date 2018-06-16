@@ -37,6 +37,7 @@ case "$1" in
         mkdir -p ~/.vim/bundle
         git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
         vim +PluginInstall +qall
+        ln -s $PWD/vim/.vim/ftplugin ~/.vim/ftplugin
         ;;
     zsh)
         echo "Installing zsh"
