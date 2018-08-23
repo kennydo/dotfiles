@@ -12,7 +12,9 @@ set nocompatible
 
 " enable mouse for all modes
 set mouse=a
-set ttymouse=xterm2
+if !has('nvim')
+    set ttymouse=xterm2
+endif
 
 " allow backspacing over everything in insert mode
 set bs=indent,eol,start
@@ -73,6 +75,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:syntastic_python_checkers = ['python', 'flake8']
 
 " -----------------------------------------------------------------------------
 "
