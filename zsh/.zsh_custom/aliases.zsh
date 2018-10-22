@@ -1,12 +1,13 @@
 alias grep='grep --color=auto'
 alias sl="ls"
 
-# cal on Mac doesn't highlight by default, but it works fine on Linux
-case $OSTYPE in
-    darwin*)
-        alias cal='/usr/local/bin/gcal'
-        ;;
-esac
+# macOS and Debian have gcal, but Ubuntu has it as just cal
+if command -v gcal &> /dev/null; then
+    command -v cal &> /dev/null
+    if [ $? -ne 0 ]; then
+        alias cal=$(command -v gcal)
+    fi
+fi
 
 # used for https://github.com/jocelynmallon/zshmarks
 alias j="jump"
