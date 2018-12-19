@@ -1,3 +1,5 @@
 .vim/.netrwhist
 atom/.atom/config.cson
 atom/.atom/nohup.out
+zsh/.zsh_custom/private_*.zsh
+
