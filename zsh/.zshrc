@@ -8,6 +8,9 @@ antigen bundle httpie
 antigen bundle git
 antigen bundle jocelynmallon/zshmarks
 
+zstyle :omz:plugins:ssh-agent agent-forwarding on
+antigen bundle ssh-agent
+
 antigen bundle ~/Workspace/dotfiles zsh/.zsh_custom --no-local-clone
 antigen theme ~/Workspace/dotfiles zsh/.zsh_custom/themes/kedo_1.zsh-theme
 
