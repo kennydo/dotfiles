@@ -26,6 +26,7 @@ dist/
 *.egg-info/
 venv/
 .mypy_cache/
+.tox/
 
 # Compiled source
 *.com
