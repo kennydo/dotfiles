@@ -9,3 +9,5 @@ git config --global fetch.prune "true"
 git config --global push.default "simple"
 
 git config --global diff.compactionHeuristic "true"
+
+git config --global pull.ff "only"
