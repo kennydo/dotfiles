@@ -42,7 +42,7 @@ case "$1" in
     zsh)
         echo "Installing zsh"
         mkdir ~/.antigen_install
-        curl -L git.io/antigen > ~/.antigen_install/antigen.zsh
+        curl -L https://github.com/zsh-users/antigen/releases/download/v2.2.3/antigen.zsh > ~/.antigen_install/antigen.zsh
         ln -s $PWD/zsh/.zshrc ~/
         ln -s $PWD/zsh/.zsh_custom ~/
         ;;
