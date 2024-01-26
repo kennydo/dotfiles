@@ -5,6 +5,9 @@ flask_debugtoolbar.db
 .activate.sh
 .deactivate.sh
 
+# Terraform
+*.tfplan
+
 # Visual Studio Code
 .vscode/
 *.code-workspace
