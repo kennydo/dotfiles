@@ -23,11 +23,11 @@ flask_debugtoolbar.db
 
 # Python
 *~
-build/
-coverage-html/
-dist/
+/build/
+/coverage-html/
+/dist/
 *.egg-info/
-venv/
+/venv/
 .mypy_cache/
 .tox/
 
