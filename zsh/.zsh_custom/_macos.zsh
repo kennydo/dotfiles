@@ -4,4 +4,8 @@ if [[ "$(uname)" == "Darwin" ]]; then
     fi
 
     FPATH="/opt/homebrew/share/zsh/site-functions:${FPATH}"
+
+    # On darwin, oh-my-zsh aliases `ls` to `ls -G`, but `-G` means something different
+    # when using coreutils `ls`.
+    alias ls="ls --color=auto"
 fi
