@@ -8,4 +8,6 @@ if [[ "$(uname)" == "Darwin" ]]; then
     # On darwin, oh-my-zsh aliases `ls` to `ls -G`, but `-G` means something different
     # when using coreutils `ls`.
     alias ls="ls --color=auto"
+
+    alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 fi
